@@ -1,0 +1,24 @@
+{
+  "name": "node-tut",
+  "version": "1.0.0",
+  "description": "a node js tut",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pradeep9955/NODE-TUT.git"
+  },
+  "author": "pradeep kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pradeep9955/NODE-TUT/issues"
+  },
+  "homepage": "https://github.com/pradeep9955/NODE-TUT#readme",
+  "dependencies": {
+    "color": "^4.2.3",
+    "nodemon": "^2.0.20",
+    "simple-node-logger": "^21.8.12"
+  }
+}
