@@ -18,6 +18,7 @@
   "homepage": "https://github.com/pradeep9955/NODE-TUT#readme",
   "dependencies": {
     "color": "^4.2.3",
+    "express": "^4.18.2",
     "nodemon": "^2.0.20",
     "simple-node-logger": "^21.8.12"
   }

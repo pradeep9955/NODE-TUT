@@ -1,35 +1,16 @@
-//Asynchronous
-// console.log('start exe...');
+const express = require('express');
+const app = express();
 
-// setTimeout(()=>{
-//     console.log('logic exe...');
-// },2000);
+app.get('', (req, res)=>{
+    res.send('Welcome This is a Home Page');
+});
 
-// console.log('complete exe...');
+app.get('/about', (req, res)=>{
+    res.send('Hello, This is a About Page');
+});
 
-//Drowback
-// a=10;
-// b=20;
+app.get('/help', (req, res)=>{
+    res.send('Welcome, This is a Hepl Page');
+});
 
-// setTimeout(()=>{
-//     b=30;
-// },2000);
-
-// console.log(a+b);
-
-//Handle DrowBack
-a=10;
-b=20;
-
-let WatingData = new Promise((resolve, reject)=>{
-    setTimeout(()=>{
-        resolve(40)
-    },2000);
-})
-
-WatingData.then((data)=>{
-    b=data;
-    console.log(a+b);
-})
-
-
+app.listen(4000);
