@@ -1,25 +1,26 @@
 const fs = require('fs');
 const path = require('path');
 
-//path set-> files folder
-const dirPath = path.join(__dirname, 'files');
+const dirPath = path.join(__dirname, 'crud');
+const filePath = `${dirPath}/apple.txt`;
 
-//multiple file create in files folder
-// for(i=0;i<5;i++){
-//     fs.writeFileSync(dirPath+`/hello${i}.txt`, "this is a simple file");
-// }
+// CREATE file-> apple.txt
+//fs.writeFileSync(filePath, "this is a simple file");
 
-//file reads
-fs.readdir(dirPath,(err, files)=>{
-    //files name in array formet
-    //console.log(files)
+// READ file
+// fs.readFile(filePath,'utf8', (err, item)=>{
+//     console.log(item);
+// })
 
-    // files name-> indivisualy
-    files.forEach((item)=>{
-        console.log("file name is: ", item);
-    })
-})
+//UPDATE
+// fs.appendFile(filePath, ' ans file name is apple.txt', (err)=>{
+//     if(!err) console.log("file is updated");
+// })
 
+// RENAME
+// fs.rename(filePath, `${dirPath}/data.txt`, (err)=>{
+//     if(!err) console.log("File name is updated");
+// })
 
-
-// console.log("hello");
+//DELETE
+fs.unlinkSync(`${dirPath}/data.txt`);
