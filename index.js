@@ -1,26 +1,18 @@
-const fs = require('fs');
-const path = require('path');
+//Asynchronous
+// console.log('start exe...');
 
-const dirPath = path.join(__dirname, 'crud');
-const filePath = `${dirPath}/apple.txt`;
+// setTimeout(()=>{
+//     console.log('logic exe...');
+// },2000);
 
-// CREATE file-> apple.txt
-//fs.writeFileSync(filePath, "this is a simple file");
+// console.log('complete exe...');
 
-// READ file
-// fs.readFile(filePath,'utf8', (err, item)=>{
-//     console.log(item);
-// })
+//Drowback
+a=10;
+b=20;
 
-//UPDATE
-// fs.appendFile(filePath, ' ans file name is apple.txt', (err)=>{
-//     if(!err) console.log("file is updated");
-// })
+setTimeout(()=>{
+    b=30;
+},2000);
 
-// RENAME
-// fs.rename(filePath, `${dirPath}/data.txt`, (err)=>{
-//     if(!err) console.log("File name is updated");
-// })
-
-//DELETE
-fs.unlinkSync(`${dirPath}/data.txt`);
+console.log(a+b);
