@@ -15,9 +15,14 @@ app.get('/profile', (req, res)=>{
     const user={
         name: "pradeep",
         email: 'pradeep@gmail.com',
-        city: "patna"
+        city: "patna",
+        skills: ['php','js','c++', 'java', 'node']
     }
     res.render('profile', {user});
+});
+
+app.get('/login', (req,res)=>{
+    res.render('login');
 });
 
 app.get('/about', (req,res)=>{
