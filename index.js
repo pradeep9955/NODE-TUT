@@ -3,9 +3,21 @@ const path = require('path');
 
 const app = express();
 const publicPath = path.join(__dirname, 'public');
-//app.use(express.static(publicPath));
+
+//ejs template
+app.set('view engine', 'ejs');
+
 app.get('/home', (req, res)=>{
     res.sendFile(`${publicPath}/home.html`);
+});
+
+app.get('/profile', (req, res)=>{
+    const user={
+        name: "pradeep",
+        email: 'pradeep@gmail.com',
+        city: "patna"
+    }
+    res.render('profile', {user});
 });
 
 app.get('/about', (req,res)=>{
