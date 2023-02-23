@@ -1,32 +1,9 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
+const publicPath = path.join(__dirname, 'public');
 
-app.get("", (req, res)=>{
-    res.send(`
-    <h1>Welcome, to Home Page.</h1>
-    <a href="/about" > Go to About Page</a>
-    `);
-});
-
-app.get('/about', (req, res)=>{
-    res.send(`
-    <input type="text" placeholder="User name" value="${req.query.name}" />
-    <button>Click Me</button>
-    <a href="/" > Go to Home Page</a>
-    `);
-});
-
-app.get('/help', (req, res)=>{
-    res.send([
-        {
-        name: "sam",
-        email: "sam@gmail.com"
-        },
-        {
-        name: "padeep",
-        email: "pradeep@gmail.com"
-        }
-    ]);
-});
+app.use(express.static(publicPath));
 
 app.listen(4000);
