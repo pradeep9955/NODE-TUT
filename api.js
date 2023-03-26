@@ -1,5 +1,6 @@
-const express = require('express');
 const dbConnect = require('./mongodb');
+const mongodb = require('mongodb')
+const express = require('express');
 const app = express();
 
 app.use(express.json());
@@ -20,12 +21,24 @@ app.post('/', async (req, resp)=>{
 
 //PUT
 app.put('/', async (req, resp)=>{
-    let data = await dbConnect();
-    let result = data.updateOne(
+     let data = await dbConnect();
+     let result = data.updateOne(
+         //static data
+         //{name:"i phone 13"},
+        //  {$set:{price: 900}}
+        
+        //dynamic data
         {name:req.body.name},
         {$set:req.body}
-        )
+         )
     resp.send({result:"update"})
 });
 
+//DELETE
+app.delete("/:id", async (req, resp)=>{
+    console.log(req.params.id);
+    const data = await dbConnect();
+    const result = await data.deleteOne({_id:new mongodb.ObjectId(req.params.id)});
+    resp.send(result);
+});
 app.listen(5000);
