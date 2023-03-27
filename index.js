@@ -1,17 +1,17 @@
-const dbConnect = require('./mongodb')
+const mongoose = require('mongoose');
 
-// // promiss 1
-dbConnect().then((resp)=>{
-    resp.find().toArray().then((data)=>{
-        console.warn(data)
-    })
-})
+const main = async ()=>{
+    await mongoose.connect("mongodb://127.0.0.1/e-com");
+    const ProductSchema = new mongoose.Schema({
+        name:String,
+        price: Number
+    });
 
+    const ProductModel = mongoose.model('products', ProductSchema);
+    // let data = new ProductModel({name: "m8"});
+    let data = new ProductModel({name: "m 10", price:1000});
+    let result = await data.save();
+    console.log(result);
+};
 
-// // promiss 2
-// const main= async ()=>{
-//     let data = await dbConnect();
-//     data = await data.find().toArray();
-//     console.warn(data);
-// }
-//main();
+main();
